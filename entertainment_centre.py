@@ -1,7 +1,9 @@
+# This app uses the TMdb api but is not endorsed or certified by TMdb
 import media, fresh_tomatoes
 import tmdbsimple as tmdb, requests
 
 # tmdbsimple configuration variables (api for The Movie Database  http://github.com/celiao/tmdbsimple)
+# many thanks to TMdb for providing the information
 tmdb.API_KEY = "d9a3d233a7c254745ebfbba029781234"
 tmdb.CONFIG_PATTERN = "http://api.themoviedb.org/3/configuration?api_key={key}"
 
@@ -36,7 +38,7 @@ for m in in_cinemas.results:
                            base_url + movie.poster_path, #image_url 
                            trailer_id, #trailer_id
                            movie.runtime, #running_time
-                           movie.rating) #certificate
+                           movie.releases()["countries"][0]["certification"]) #certificate
     # add movie to movies array
     movies.append(new_item)
     
