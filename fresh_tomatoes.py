@@ -158,7 +158,7 @@ movie_tile_content = '''
         data-trigger="hover"
         title="{movie_title}"
         data-html="true"
-        data-content="{tagline}<br/>
+        data-content="{plot}<br/>
                     <b>Certificate: </b>{certificate}<br/>
                     <b>Running Time: </b>{running_time}">
         <img src="{image_url}" width="165" height="257">
@@ -176,7 +176,7 @@ tv_show_tile_content = '''
         data-trigger="hover"
         title="{tv_show_title}"
         data-html="true"
-        data-content="{tagline}">
+        data-content="{plot}">
         <img src="{image_url}" width="165" height="257">
     </span>
     <h2>{tv_show_title}</h2>
@@ -191,7 +191,7 @@ def create_movie_tiles_content(movies):
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title=movie.video_title,
-            tagline=movie.tagline,
+            plot=movie.plot,
             image_url=movie.image_url,
             certificate=movie.certificate,
             running_time=movie.running_time,
@@ -207,7 +207,7 @@ def create_tv_show_tiles_content(tv_shows):
         # Append the tile for the movie with its content filled in
         content += tv_show_tile_content.format(
             tv_show_title=tv_show.video_title,
-            tagline=tv_show.tagline,
+            plot=tv_show.plot,
             image_url=tv_show.image_url,
             trailer_youtube_id=tv_show.trailer_id
         )
