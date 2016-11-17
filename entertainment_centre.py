@@ -1,9 +1,13 @@
-# This app uses the TMdb api but is not endorsed or certified by TMdb
 import media, fresh_tomatoes
 import tmdbsimple as tmdb, requests
 
-# tmdbsimple configuration variables (api for The Movie Database  http://github.com/celiao/tmdbsimple)
+# This app uses the TMdb api but is not endorsed or certified by TMdb
+# http://www.themoviedb.org
+# And a python wrapper for thic called tmdbsimple
+# http://github.com/celiao/tmdbsimple
 # many thanks to TMdb for providing the information
+
+# TMdb configuration variables 
 tmdb.API_KEY = "d9a3d233a7c254745ebfbba029781234"
 tmdb.CONFIG_PATTERN = "http://api.themoviedb.org/3/configuration?api_key={key}"
 
