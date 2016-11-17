@@ -18,4 +18,4 @@ media.py
 <h4>Output</h4>
 fresh_tomatoes.html
 
-* Speeds may vary, but due to only having free access to The Movie Database, there is a restriction in place of 40 lookups every 10 seconds. Getting all the films and TV Shows can take over 1 minute.
+&ast; Speeds may vary, but due to only having free access to The Movie Database, there is a restriction in place of 40 lookups every 10 seconds. Getting all the films and TV Shows can take over 1 minute.
