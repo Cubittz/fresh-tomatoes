@@ -1,4 +1,4 @@
-# movies
+# fresh-tomatoes
 Movie Project Part of Udacity Full Stack Nanodegree 
 
 This application produces output to an html page to show a selection of latest movies and popular tv shows, along with their poster art and links to YouTube trailers.
