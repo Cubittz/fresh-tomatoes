@@ -163,7 +163,7 @@ movie_tile_content = '''
                     <b>Running Time: </b>{running_time}">
         <img src="{image_url}" width="165" height="257">
     </span>
-    <h2>{movie_title}</h2>
+    <h3>{movie_title}</h3>
 </div>
 '''
 
@@ -179,7 +179,7 @@ tv_show_tile_content = '''
         data-content="{plot}">
         <img src="{image_url}" width="165" height="257">
     </span>
-    <h2>{tv_show_title}</h2>
+    <h3>{tv_show_title}</h3>
 </div>
 '''
 

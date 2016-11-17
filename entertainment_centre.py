@@ -31,15 +31,22 @@ for m in in_cinemas.results:
         trailer_id = movie.videos()["results"][0]["key"]  # if so, grab url for first video
     else:
         trailer_id = ""  # else leave trailer_id blank
+    # certifications are kept in list called releases
+    # will go through this list, look for any certificates and assign to a variable
+    # if country is US and a certificate is listed then stop looking
+    for r in movie.releases()["countries"]:
+        if r["certification"] != '':
+            certification = r["certification"]
+            if r["iso_3166_1"] == u'US':
+                break
     
     # map movie info to an instance of class media.Movie    
-    new_item = media.Movie(movie.title.encode('cp1252') ,  # video_title
+    new_item = media.Movie(movie.title.encode('cp1252') ,   # video_title
                            movie.overview.encode('cp1252'), # plot
-                           base_url + movie.poster_path,  # image_url 
-                           trailer_id,  # trailer_id
-                           movie.runtime,  # running_time
-                           movie.releases()["countries"][0]["certification"])  # certificate
-
+                           base_url + movie.poster_path,    # image_url 
+                           trailer_id,                      # trailer_id
+                           movie.runtime,                   # running_time
+                           certification)                   # certificate
     # add movie to movies array
     movies.append(new_item)
     
@@ -62,9 +69,9 @@ for t in top_rated.results:
 
     # map tv_show info to an instance of class media.Tv_Show
     new_item = media.Tv_Show(tv_show.original_name.encode('cp1252'),  # video_title
-                             tv_show.overview.encode('cp1252'),  # plot
-                             base_url + tv_show.poster_path,  # image_url 
-                             trailer_id)  # trailer_id
+                             tv_show.overview.encode('cp1252'),       # plot
+                             base_url + tv_show.poster_path,          # image_url 
+                             trailer_id)                              # trailer_id
     # add tv_show to tv_shows array
     tv_shows.append(new_item)
 # pass both arrays to open_movies_page function in fresh_tomatoes
